@@ -8,23 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		0BC85B042A6515050055C795 /* AsyncAwaitIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC85B032A6515050055C795 /* AsyncAwaitIOSApp.swift */; };
-		0BC85B062A6515050055C795 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC85B052A6515050055C795 /* ContentView.swift */; };
+		0BC85B062A6515050055C795 /* CareerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC85B052A6515050055C795 /* CareerListView.swift */; };
 		0BC85B082A6515060055C795 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BC85B072A6515060055C795 /* Assets.xcassets */; };
 		0BC85B0B2A6515060055C795 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BC85B0A2A6515060055C795 /* Preview Assets.xcassets */; };
 		0BC85B132A6515360055C795 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC85B122A6515360055C795 /* ApiService.swift */; };
 		0BC85B172A6518E80055C795 /* ModelCareer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC85B162A6518E80055C795 /* ModelCareer.swift */; };
 		0BC85B192A651A980055C795 /* CareerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC85B182A651A980055C795 /* CareerViewModel.swift */; };
+		0BC85B1D2A6550250055C795 /* AddCareerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC85B1C2A6550250055C795 /* AddCareerView.swift */; };
+		0BC85B202A6552F50055C795 /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC85B1F2A6552F50055C795 /* ColorExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0BC85B002A6515050055C795 /* AsyncAwaitIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsyncAwaitIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC85B032A6515050055C795 /* AsyncAwaitIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitIOSApp.swift; sourceTree = "<group>"; };
-		0BC85B052A6515050055C795 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0BC85B052A6515050055C795 /* CareerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerListView.swift; sourceTree = "<group>"; };
 		0BC85B072A6515060055C795 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BC85B0A2A6515060055C795 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0BC85B122A6515360055C795 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		0BC85B162A6518E80055C795 /* ModelCareer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCareer.swift; sourceTree = "<group>"; };
 		0BC85B182A651A980055C795 /* CareerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerViewModel.swift; sourceTree = "<group>"; };
+		0BC85B1C2A6550250055C795 /* AddCareerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCareerView.swift; sourceTree = "<group>"; };
+		0BC85B1F2A6552F50055C795 /* ColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +61,12 @@
 		0BC85B022A6515050055C795 /* AsyncAwaitIOS */ = {
 			isa = PBXGroup;
 			children = (
+				0BC85B1E2A6552DB0055C795 /* Ext */,
+				0BC85B1B2A6550000055C795 /* View */,
 				0BC85B152A65181F0055C795 /* Model */,
 				0BC85B142A6515C70055C795 /* ViewModel */,
 				0BC85B112A6515140055C795 /* Service */,
 				0BC85B032A6515050055C795 /* AsyncAwaitIOSApp.swift */,
-				0BC85B052A6515050055C795 /* ContentView.swift */,
 				0BC85B072A6515060055C795 /* Assets.xcassets */,
 				0BC85B092A6515060055C795 /* Preview Content */,
 			);
@@ -98,6 +103,23 @@
 				0BC85B162A6518E80055C795 /* ModelCareer.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0BC85B1B2A6550000055C795 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0BC85B052A6515050055C795 /* CareerListView.swift */,
+				0BC85B1C2A6550250055C795 /* AddCareerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0BC85B1E2A6552DB0055C795 /* Ext */ = {
+			isa = PBXGroup;
+			children = (
+				0BC85B1F2A6552F50055C795 /* ColorExt.swift */,
+			);
+			path = Ext;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,11 +192,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BC85B062A6515050055C795 /* ContentView.swift in Sources */,
+				0BC85B062A6515050055C795 /* CareerListView.swift in Sources */,
 				0BC85B042A6515050055C795 /* AsyncAwaitIOSApp.swift in Sources */,
 				0BC85B192A651A980055C795 /* CareerViewModel.swift in Sources */,
 				0BC85B132A6515360055C795 /* ApiService.swift in Sources */,
+				0BC85B1D2A6550250055C795 /* AddCareerView.swift in Sources */,
 				0BC85B172A6518E80055C795 /* ModelCareer.swift in Sources */,
+				0BC85B202A6552F50055C795 /* ColorExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

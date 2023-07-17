@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct CareerListView: View {
     @StateObject var vm = CareerViewModel()
     
     
@@ -25,10 +25,10 @@ struct ContentView: View {
                         }
                         .padding()
                         .frame(maxWidth: .infinity, alignment:.leading)
-                        .background(Color.white)
+                        .background(Color(hex: 0xF8FFF7))
                         .cornerRadius(10)
                     }
-                    .shadow(radius: 3)
+                    .shadow(radius: 0.5)
                     .padding(.top, 5)
                     
                 }
@@ -36,6 +36,15 @@ struct ContentView: View {
                 .cornerRadius(10)
             }
             .navigationTitle(vm.careerResponse?.message ?? "")
+            .toolbar{
+                ToolbarItem(placement: .navigationBarTrailing){
+                    Button{
+                        
+                    } label:{
+                        Text("Add")
+                    }
+                }
+            }
             .overlay(content: {
                 if vm.isLoading {
                     ProgressView()
@@ -57,8 +66,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct CareerList_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CareerListView()
     }
 }
