@@ -19,4 +19,7 @@ struct Career: Codable, Identifiable{
     var logo, url: String
 }
 
+struct CareerReq: Codable{
+    var name, url: String
+}
  

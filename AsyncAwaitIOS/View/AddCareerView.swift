@@ -7,29 +7,46 @@
 
 import SwiftUI
 
+
 struct AddCareerView: View {
-    @State var title: String = ""
-    @State var url:String = ""
+    @StateObject var vm = CareerViewModel()
+    @State private var isShowingPhotoPicker: Bool = false
+   
+    @State private var showingPicker = false
     var body: some View {
         VStack{
-            Image(systemName: "photo")
-                .foregroundColor(.brown)
-                .font(.system(size: 100))
-            Text("Tap to pick a image")
+            Image(uiImage: vm.image)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 150, height: 150)
+                .cornerRadius(50)
+                .padding()
+                .onTapGesture {
+                    isShowingPhotoPicker = true
+                }
             
-            TextField("Enter Title", text: $title)
+            TextField("Enter title", text: $vm.careerRew.name)
                 .textFieldStyle(.roundedBorder)
-            TextField("Enter url", text: $url)
+                 
+            TextField("Enter url", text: $vm.careerRew.url)
                 .textFieldStyle(.roundedBorder)
             
             Button{
-                
+                print("tap on submit")
+                Task{
+                    await vm.addCareer()
+                }
             }label: {
                 Text("Upload Data")
             }
-                
             
-        }.padding()
+        }
+        .navigationTitle("Add Career")
+        .sheet(isPresented: $isShowingPhotoPicker, content: {
+            PhotoPicker(avatarImage: $vm.image)
+        })
+        .padding()
+        .padding()
     }
 }
 

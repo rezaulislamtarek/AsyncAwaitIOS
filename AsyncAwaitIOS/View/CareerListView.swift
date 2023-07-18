@@ -9,37 +9,47 @@ import SwiftUI
 
 struct CareerListView: View {
     @StateObject var vm = CareerViewModel()
-    
+    @State private var showAddCarear: Bool = false
     
     var body: some View {
         NavigationView {
         
             ScrollView(showsIndicators: false){
                 
-                LazyVStack(){
-                    ForEach(vm.careerResponse?.data ?? []){ item in
-                        VStack(alignment: .leading){
-                            Text(item.name.uppercased())
-                                .bold()
-                            Text(item.logo).font(.system(size: 14))
+                VStack {
+                    LazyVStack(){
+                        ForEach(vm.careerResponse?.data ?? []){ item in
+                            VStack(alignment: .leading){
+                                HStack {
+                                    UrlImageView(urlString: "https://digicomapi.diatomicsoft.com"+item.logo)
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 80, height: 80)
+                                        .cornerRadius(10)
+                                    Text(item.name.uppercased())
+                                        .bold()
+                                }
+                                Text(item.logo).font(.system(size: 14))
+                            }
+                            .padding()
+                            .frame(maxWidth: .infinity, alignment:.leading)
+                            .background(Color(hex: 0xF8FFF7))
+                            .cornerRadius(10)
                         }
-                        .padding()
-                        .frame(maxWidth: .infinity, alignment:.leading)
-                        .background(Color(hex: 0xF8FFF7))
-                        .cornerRadius(10)
+                        .shadow(radius: 0.5)
+                        .padding(.top, 5)
+                        
                     }
-                    .shadow(radius: 0.5)
-                    .padding(.top, 5)
-                    
-                }
-                .padding()
+                    .padding()
                 .cornerRadius(10)
+                }
+                
+                NavigationLink("", destination: AddCareerView(), isActive: $showAddCarear )
             }
             .navigationTitle(vm.careerResponse?.message ?? "")
             .toolbar{
                 ToolbarItem(placement: .navigationBarTrailing){
                     Button{
-                        
+                           showAddCarear = true
                     } label:{
                         Text("Add")
                     }
