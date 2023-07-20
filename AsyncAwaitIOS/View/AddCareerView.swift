@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Material_SwiftUI
 
 
 struct AddCareerView: View {
@@ -25,11 +26,9 @@ struct AddCareerView: View {
                     isShowingPhotoPicker = true
                 }
             
-            TextField("Enter title", text: $vm.careerRew.name)
-                .textFieldStyle(.roundedBorder)
-                 
-            TextField("Enter url", text: $vm.careerRew.url)
-                .textFieldStyle(.roundedBorder)
+            
+            MTextField(text: $vm.careerRew.name, placeHolder:"Title", color: .gray, cornerRadious: 4)
+            MTextField(text: $vm.careerRew.url, placeHolder:"Enter url", color: .gray, cornerRadious: 4)
             
             Button{
                 print("tap on submit")
